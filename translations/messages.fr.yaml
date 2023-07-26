@@ -1,0 +1,37 @@
+pages:
+  home:
+    title: "Liste des annonces"
+  listing:
+    title: "%title%"
+    show:
+      createdAt: "Date de l'annonce: "
+      producedYear: "Date de production: "
+      mileage: "Kilomètrage: "
+      price: "Prix: "
+
+common:      
+  button:
+    buy: "Acheter"
+    new: Ajouter
+
+
+nav:
+  title: "La centrale"
+
+form:
+  listing:
+    title: "Créér une nouvelle annonce"
+    label: "Model"
+  model:
+    title: "Nouveau modèle"
+
+
+back:
+  pages:
+    model:
+      index:
+        title: "Liste des modèles"
+  form:
+    model:
+      delete:
+        title: "Supprimer un élément"

@@ -1,0 +1,15 @@
+{% extends 'front/base.html.twig' %}
+
+{% block title %}{{ 'form.listing.title'|trans }}{% endblock %}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+{% block body %}
+    <h1>{{ 'form.listing.title'|trans }}</h1>
+    <div class="container">
+        {{ form_start(form) }}
+            {{ form_rest(form) }}
+            <button class="btn btn-primary" type="submit">
+                {{ 'common.button.new'|trans }}
+            </button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

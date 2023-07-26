@@ -1,0 +1,11 @@
+{% extends 'front/base.html.twig' %}
+
+{% block title %}{{ 'form.model.title'|trans }}{% endblock %}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+{% block body %}
+    <h1>{{ 'form.model.title'|trans }}</h1>
+
+    {{ include('back/model/_form.html.twig') }}
+
+    <a href="{{ path('app_model_index') }}">back to list</a>
+{% endblock %}

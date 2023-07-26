@@ -38,6 +38,9 @@ class Listing
     #[ORM\ManyToOne(inversedBy: 'listings')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Model $model = null;
+    public function __construct(){
+        $this->createdAt = new \DateTime();
+    }
 
     public function getId(): ?int
     {

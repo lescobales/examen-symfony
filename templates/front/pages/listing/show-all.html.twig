@@ -1,9 +1,11 @@
 {% extends 'front/base.html.twig' %}
 
-{% block title %}{{ 'pages.home.title'|trans }}{% endblock %}
+{% block title %}
+    Toutes les annonces
+{% endblock %}
 
 {% block body %}
-    <h1>{{ 'pages.home.title'|trans }}</h1>
+<h1>{{ 'pages.home.title'|trans }}</h1>
     <div class="container">
         <div class="row">
             {% for listing in listings %}
@@ -12,5 +14,8 @@
             } %}
             {% endfor %}
         </div>
+    </div>
+    <div class="navigation d-flex justify-content-center mt-2">
+        {{ knp_pagination_render(listings) }}
     </div>
 {% endblock %}

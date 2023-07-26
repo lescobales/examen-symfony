@@ -1,0 +1,38 @@
+{% extends 'front/base.html.twig' %}
+
+{% block body %}
+     <div class="d-flex my-4">
+        <h1 class="my-auto">{{ 'back.pages.model.index.title'|trans }}</h1>
+    </div>
+
+    <table class="table table-striped table-hover table-dark">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for model in models %}
+            <tr>
+                <td>{{ model.id }}</td>
+                <td>{{ model.name }}</td>
+                <td>
+                    <a href="{{ path('app_model_show', {'id': model.id}) }}"><i class="fa-regular fa-eye"></i></a>
+                    <a href="{{ path('app_model_edit', {'id': model.id}) }}"><i class="fa-regular fa-pen-to-square"></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_model_new') }}">Create new</a>
+    <div class="navigation d-flex justify-content-center mt-2">
+        {{ knp_pagination_render(models) }}
+    </div>
+{% endblock %}

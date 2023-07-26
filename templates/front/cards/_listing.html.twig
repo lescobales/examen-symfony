@@ -1,0 +1,15 @@
+<div class="col-lg-4 col-md-6 col-sm-12">
+    <div class="card-listing-container">
+       <a href="{{ path('app_home_show', { 'id': listing.id }) }}">
+            <img src="{{ listing.image }}" alt="{{ listing.model.name }}">
+        </a>
+    </div>
+    <div class="d-flex justify-content-between">
+        <div>
+            <p class="card-listing-name">{{ listing.model.name }}</p>
+        </div>
+                <div>
+                    {{ listing.price|price }}
+                </div>
+    </div>
+</div>

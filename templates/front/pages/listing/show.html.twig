@@ -1,0 +1,43 @@
+{% extends 'front/base.html.twig' %}
+
+{% block title %}
+    {{ listing.model.name }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ 'pages.listing.title'|trans({'%title%': listing.title }) }}</h1>
+    <div class="container-top row">
+            <div class="col-7 p-0 h-100">
+                <div class="container-image-listing-show">
+                    <img src="{{ listing.image }}">
+                </div>
+                <p class="my-4 fs-2 text-center">{{ listing.description }}</p>
+            </div>
+            <div class="col-1">
+            </div>
+            <div class="col-4 my-auto">
+                <div class="h-100">
+                    <h1 class="text-center mb-4">{{ listing.model.name }}</h1>
+                    <p class="my-4 fs-2 text-center">{{ 'pages.listing.show.producedYear'|trans }}{{ listing.producedYear }}</p>
+                    <p class="my-4 fs-2 text-center">{{ 'pages.listing.show.mileage'|trans }}{{ listing.mileage }}</p>
+                    <p class="my-4 fs-2 text-center">{{ 'pages.listing.show.price'|trans }}{{ listing.price|price }}</p>
+                    <div class="w-100 mt-4">
+                        <button class="button-fire fs-3" data-buy-car="{{ listing.id }}">
+                            {{ 'common.button.buy'|trans }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <p>{{ 'pages.listing.show.createdAt'|trans }} : {{ listing.createdAt|date('d/m/Y') }}</p>
+            <div>
+        </div>
+
+        {% dump(listing) %}
+
+        
+
+        
+{% endblock %}

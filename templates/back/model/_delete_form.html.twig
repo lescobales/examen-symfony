@@ -1,0 +1,9 @@
+{% block title %}{{ 'back.form.model.delete.title'|trans }}{% endblock %}
+
+
+{% block body %}
+<form method="post" action="{{ path('app_model_delete', {'id': model.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ model.id) }}">
+    <button class="btn btn-warning">Delete</button>
+</form>
+{% endblock %}
